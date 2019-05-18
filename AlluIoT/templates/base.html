@@ -33,100 +33,109 @@
   <body>
     <!-- ################## content START here ############################ -->
 
-    <!-- Top menu -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="static/images/MLP.png" alt="logo">
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+
+      <div class="overlay">
+        <nav
+          class="navbar navbar-expand-md navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">
+            <img src="static/images/ML_python.jpg" style="display:
+            inline-block; width: 50px; height: 100%;>
+            <span style="display: inline-block;"> PyML</span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              {% if current_user.is_authenticated %}
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  DASHBOARDS
+                </a>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <a
+                    class="dropdown-item"
+                    href="{{ url_for('core.instView_dash') }}"
+                    >Dashboard Instantâneo (m3 & Volt)</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="{{ url_for('core.compareView_dash') }}"
+                    >Dashboard Comparativo (m3)</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="{{ url_for('core.tableView_dash') }}"
+                    >Dashboard Individual (m3)</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="{{ url_for('core.pumpView_dash') }}"
+                    >Dashboard Bombas (Volt)</a
+                  >
+                </div>
+              </li>
+
+              <li class="nav-link">
+                <a href="{{ url_for('users.account') }}">Account</a>
+              </li>
+
+              <li class="nav-link">
+                <a href="{{ url_for('users.logout') }}">Log Out</a>
+              </li>
+
+              {% else %}
+
+              <li class="nav-link">
+                <a href="{{ url_for('users.login') }}">Log In</a>
+              </li>
+              <li class="nav-link">
+                <a href="{{ url_for('users.register') }}">Register</a>
+              </li>
+              {% endif %}
+
+              <li class="nav-link">
+                <a href="{{ url_for('core.info') }}">About</a>
+              </li>
+
+              <li class="nav-link active">
+                <a href="{{ url_for('core.index') }}"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div
+          style="height: 100vh;background:transparent;padding-top: 20px"
+          class="container-fluid"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
-            {% if current_user.is_authenticated %}
-
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-               >
-                DASHBOARDS
-              </a>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <a
-                  class="dropdown-item"
-                  href="{{ url_for('core.instView_dash') }}"
-                  >Dashboard Instantâneo (m3 & Volt)</a
-                >
-                <a 
-                  class="dropdown-item"
-                  href="{{ url_for('core.compareView_dash') }}"
-                  >Dashboard Comparativo (m3)</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="{{ url_for('core.tableView_dash') }}"
-                  >Dashboard Individual (m3)</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="{{ url_for('core.pumpView_dash') }}"
-                  >Dashboard Bombas (Volt)</a
-                >
-              </div>
-            </li>
-
-            <li class="nav-link">
-              <a style="color: rgb(150, 251, 251)" href="{{ url_for('users.account') }}">Account</a>
-            </li>
-
-            <li class="nav-link">
-              <a style="color: rgb(150, 251, 251)" href="{{ url_for('users.logout') }}">Log Out</a>
-            </li>
-
-            {% else %}
-
-            <li class="nav-link">
-              <a style="color: rgb(150, 251, 251)" href="{{ url_for('users.login') }}">Log In</a>
-            </li>
-            <li class="nav-link">
-              <a style="color: rgb(150, 251, 251)" href="{{ url_for('users.register') }}">Register</a>
-            </li>
-            {% endif %}
-
-            <li class="nav-link active">
-              <a style="color: rgb(150, 251, 251)" href="{{ url_for('core.index') }}"
-                >Home <span class="sr-only">(current)</span></a
-              >
-            </li>
-          </ul>
+          {% block content %} {% endblock %}
         </div>
-    
       </div>
-    </nav>
-    <div
-    style="height: 100vh;background:transparent;padding-top: 20px"
-    class="container-fluid"
-    >
-    {% block content %} {% endblock %}
-    </div>
+
 
     <!-- ################## content END here ############################## -->
     <script
