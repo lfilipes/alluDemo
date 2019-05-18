@@ -1,0 +1,38 @@
+first create a virtual environment
+# conda create -n alluenv python=3.7
+
+Next activate the new virtual environment
+# conda activate alluenv
+
+For deactivating 
+# conda deactivate
+
+Now install all the libraries from the requirements.txt file in the directory
+# pip install -r requirements.txt
+
+database init and migration
+# flask db init
+# flask db migrate -m 'init'
+# flask db upgrade
+
+pip install gunicorn   # this creates an interface to http server
+
+pip freeze > requirements.txt  #this creates a new requirements file with all that you need
+
+$ heroku login
+Create a new Git repository
+Initialize a git repository in a new or existing directory
+
+$ cd my-project/
+$ git init
+$ heroku git:remote -a alphaville
+Deploy your application
+Commit your code to the repository and deploy it to Heroku using Git.
+
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+Existing Git repository
+For existing repositories, simply add the heroku remote
+
+$ heroku git:remote -a alphaville

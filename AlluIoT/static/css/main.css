@@ -1,0 +1,36 @@
+/***** Top menu *****/
+
+/*header style*/
+html {
+  background-image: url("../images/iot1.jpg");
+  background-repeat: repeat;
+}
+
+.body {
+  background-color: transparent;
+}
+
+.my-body {
+  background-image: url("../images/iot1.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background: rgba(244, 244, 244, 0.79);
+}
+
+.header {
+  background-image: url("../images/iot1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(244, 244, 244, 0.79);
+}
