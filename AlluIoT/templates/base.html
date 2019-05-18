@@ -32,14 +32,14 @@
 
   <body>
     <!-- ################## content START here ############################ -->
-<header class="header">
-    <div class="overlay">
 
-  <nav class="navbar navbar-expand-lg" style="padding-bottom: 10px;background:#ADD8E6">
+
+  <div class="overlay">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+ 
+ <!-- Navbar brand -->
     <a class="navbar-brand" href="#">
-      <img src="static/images/AlluIoT_logo.jpg" style="display: inline-block; width: 50px; height: 100%;>
-      <span style="display: inline-block;">   AlluIoT</span>
-    </a>
+    <img src="static/images/ML_python.png" alt="Logo">PyML</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,7 @@
       {% if current_user.is_authenticated %}
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:rgba(236, 119, 24, 0.931)">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           DASHBOARDS
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -100,7 +100,7 @@
   </div>
 
 </div>
-</header>
+
 
 
     <!-- ################## content END here ############################## -->
@@ -120,6 +120,5 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src='static/scripts/main.js'></script>
-
   </body>
 </html>

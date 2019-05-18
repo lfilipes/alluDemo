@@ -1,0 +1,31 @@
+/* Top menu */
+.navbar {
+  background: #add8e6;
+  color: cornflowerblue;
+}
+.nav-link,
+.navbar-brand {
+  color: #171e8aca;
+  cursor: pointer;
+}
+.nav-link {
+  margin-right: 4em !important;
+}
+.nav a {
+  color: white !important;
+  font-size: 4em !important;
+}
+.nav li {
+  padding-right: 5px;
+}
+.nav-link:hover {
+  background: #f4f4f4;
+  color: #f97300;
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
+.navbar-toggler {
+  background: #fff !important;
+}
+/*header style*/

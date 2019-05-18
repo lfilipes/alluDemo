@@ -26,14 +26,9 @@ def Add_Dash(server):
             if view_func.startswith(dashapp.url_base_pathname):
                 dashapp.server.view_functions[view_func] = login_required(dashapp.server.view_functions[view_func])
        
-    dashapp = dash.Dash(__name__, server=server, external_stylesheets=[dbc.themes.BOOTSTRAP], url_base_pathname='/instant_dash/', static_folder='static')
+    dashapp = dash.Dash(__name__, server=server, url_base_pathname='/instant_dash/', external_stylesheets=[dbc.themes.BOOTSTRAP])
     protect_dashviews(dashapp)
-    server = dashapp.server 
-
-    @dashapp.server.route('/static/<path>')
-    def static_file(path):
-        static_folder = os.path.join(os.getcwd(), 'static')
-        return send_from_directory(static_folder, path)
+    server = dashapp.server
 
     body1 = dbc.Container(
             [
